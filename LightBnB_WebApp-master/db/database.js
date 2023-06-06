@@ -4,13 +4,13 @@ const users = require("./json/users.json");
 const { Pool } = require('pg');
 
 const pool = new Pool({
-  user: 'vagrant',
-  password: '123',
+  user: 'labber',
+  password: 'labber',
   host: 'localhost',
-  database: 'bootcampx'
+  database: 'lightbnb'
 });
 
-
+pool.connect().then((res)=>console.log(res))
 
 module.exports = {
   query: (text, params) => pool.query(text, params),
